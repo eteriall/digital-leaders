@@ -108,7 +108,7 @@ ROOT = path.dirname(path.realpath(__file__))
 
 app.secret_key = b'_5#y2L"F4Q8z\n\xec]/'
 
-socketio = SocketIO(app)
+socketio = SocketIO(app, cors_allowed_origins="*")
 
 _users_in_room = {}  # stores room wise user list
 _room_of_sid = {}  # stores room joined by an used
