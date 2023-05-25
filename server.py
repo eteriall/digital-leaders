@@ -59,7 +59,7 @@ bonuslist = {
 
 tests = {
     1: {
-        'Кто такие HR?': [[1, 0, 0, 0, 0], ['Кадровые специалисты компаний',
+        'Кто такие HR?': [[1, 0, 0, 0], ['Кадровые специалисты компаний',
                                             'Программисты в компании',
                                             'Рекламодатели',
                                             'Менеджеры в компаниях']],
@@ -349,7 +349,6 @@ def login():
             return redirect(url_for('main'))
         else:
             return redirect('/login?error=wrongcred')
-
     else:
         return render_template('login.html',
                                error={'wrongcred': 'Неправильный логин или пароль'}.get(request.args.get('error')))
@@ -423,8 +422,10 @@ if __name__ == "__main__":
     from eventlet.green import socket
     from eventlet.green.OpenSSL import SSL
 
-    eventlet.wsgi.server(
-        eventlet.wrap_ssl(eventlet.listen(('', 82)),
-                          certfile='/etc/letsencrypt/live/rasskazchikov.ru/fullchain.pem',
-                          keyfile='/etc/letsencrypt/live/rasskazchikov.ru/privkey.pem',
-                          server_side=True), app)
+    # eventlet.wsgi.server(
+    #     eventlet.wrap_ssl(eventlet.listen(('', 82)),
+    #                       certfile='/etc/letsencrypt/live/rasskazchikov.ru/fullchain.pem',
+    #                       keyfile='/etc/letsencrypt/live/rasskazchikov.ru/privkey.pem',
+    #                       server_side=True), app)
+
+    app.run(debug=True)
