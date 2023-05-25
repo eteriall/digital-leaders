@@ -19,7 +19,7 @@ document.addEventListener("DOMContentLoaded", (event)=>{
         window.location.replace("/");
     });
 
-    document.getElementById("room_link").innerHTML=`Ссылка на трансляцию: <span class="heading-mark">${window.location.href}</span>`;
+    document.getElementById("room_link").innerHTML=`<a class="heading-mark" href="{window.location.href}">Ссылка на трансляцию</a>`;
 
 });
 
