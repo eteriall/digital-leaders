@@ -422,10 +422,10 @@ if __name__ == "__main__":
     from eventlet.green import socket
     from eventlet.green.OpenSSL import SSL
 
-    # eventlet.wsgi.server(
-    #     eventlet.wrap_ssl(eventlet.listen(('', 82)),
-    #                       certfile='/etc/letsencrypt/live/rasskazchikov.ru/fullchain.pem',
-    #                       keyfile='/etc/letsencrypt/live/rasskazchikov.ru/privkey.pem',
-    #                       server_side=True), app)
+    eventlet.wsgi.server(
+        eventlet.wrap_ssl(eventlet.listen(('', 82)),
+                          certfile='/etc/letsencrypt/live/rasskazchikov.ru/fullchain.pem',
+                          keyfile='/etc/letsencrypt/live/rasskazchikov.ru/privkey.pem',
+                          server_side=True), app)
 
-    app.run(debug=True)
+    # app.run(debug=True)
