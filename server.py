@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 import re
+
 from cert_generator import *
 from flask import Flask, render_template, Response
 import flask
@@ -398,9 +399,14 @@ def download_cert():
     return send_file('cert.docx')
 
 
-
 if __name__ == "__main__":
     import eventlet
     import eventlet.wsgi
+    from eventlet.green import socket
+    from eventlet.green.OpenSSL import SSL
 
-    eventlet.wsgi.server(eventlet.listen(('', 81)), app)
+    eventlet.wsgi.server(
+        eventlet.wrap_ssl(eventlet.listen(('', 80)),
+                          certfile='server.cert',
+                          keyfile='server.key',
+                          server_side=True), app)
