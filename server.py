@@ -400,4 +400,7 @@ def download_cert():
 
 
 if __name__ == "__main__":
-    app.run(host='0.0.0.0', debug=True, port=81)
+    import eventlet
+    import eventlet.wsgi
+
+    eventlet.wsgi.server(eventlet.listen(('', 81)), app)
