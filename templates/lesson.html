@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html style="font-size: 16px;" lang="ru">
+<head>
+    <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <title>Урок №{{lesson}}</title>
+    <link rel="stylesheet" href="/static/nicepage.css" media="screen">
+    <link rel="stylesheet" href="/static/lesson.css" media="screen">
+    <script class="u-script" type="text/javascript" src="/static/jquery.js" defer=""></script>
+    <script class="u-script" type="text/javascript" src="/static/nicepage.js" defer=""></script>
+    <meta name="generator" content="Nicepage 5.9.6, nicepage.com">
+    <link id="u-theme-google-font" rel="stylesheet"
+          href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i|Open+Sans:300,300i,400,400i,500,500i,600,600i,700,700i,800,800i">
+
+    <meta property="og:title" content="lesson">
+    <meta property="og:type" content="website">
+    <meta data-intl-tel-input-cdn-path="intlTelInput/">
+</head>
+<body class="u-body u-xl-mode" data-lang="ru">
+<header class="u-clearfix u-container-align-center u-header u-header" id="sec-191b">
+    <div class="u-clearfix u-sheet u-sheet-1">
+        <a href="/main"><img class="u-image u-image-default u-image-1" src="/static/logo.png" alt=""
+                             data-image-width="4096" data-image-height="2647"></a>
+    </div>
+</header>
+<section class="u-align-left u-clearfix u-section-1" id="sec-0aac">
+    <div class="u-clearfix u-sheet u-valign-middle-md u-sheet-1">
+        <div class="u-expanded-width-md u-expanded-width-sm u-expanded-width-xs u-tab-links-align-justify u-tabs u-tabs-1">
+            <ul class="u-spacing-30 u-tab-list u-unstyled" role="tablist">
+                <li class="u-tab-item" role="presentation">
+                    <a class="active u-active-palette-2-base u-button-style u-tab-link u-tab-link-1" id="link-tab-081f"
+                       href="#tab-081f" role="tab" aria-controls="tab-081f" aria-selected="true"
+                       style="background-color: #DFE7BE;">Видеоурок</a>
+                </li>
+                <li class="u-tab-item u-tab-item-2" role="presentation">
+                    <a class="u-active-palette-2-base u-button-style u-tab-link u-tab-link-2" id="tab-6219"
+                       href="#link-tab-6219" role="tab" aria-controls="link-tab-6219" aria-selected="false"
+                       style="background-color: #DFE7BE;">Конспект занятия</a>
+                </li>
+                <li class="u-tab-item" role="presentation">
+                    <a class="u-active-palette-2-base u-button-style u-tab-link u-tab-link-3" id="link-tab-0805"
+                       href="#tab-0805" role="tab" aria-controls="tab-0805" aria-selected="false"
+                       style="background-color: #DFE7BE;">Бонус</a>
+                </li>
+                </li>
+                <li class="u-tab-item" role="presentation">
+                    <a class="u-active-palette-2-base u-button-style u-tab-link u-tab-link-3" id="link-tab-0806"
+                       href="#tab-0806" role="tab" aria-controls="tab-0805" aria-selected="false"
+                       style="background-color: #DFE7BE;">Тестирование</a>
+                </li>
+            </ul>
+            <div class="u-tab-content">
+                <div class="u-container-style u-tab-active u-tab-pane" id="tab-081f" role="tabpanel"
+                     aria-labelledby="link-tab-081f">
+                    <div class="u-container-layout u-valign-middle-xl u-container-layout-1">
+                        <div class="u-align-left u-expanded-width u-left-0 u-uploaded-video u-video u-video-1">
+                            <div class="embed-responsive">
+                                <video class="embed-responsive-item" controls>
+                                    <source src="/static/{{vid}}" type="video/mp4">
+                                    <p>Your browser does not support HTML5 video.</p>
+                                </video>
+                                <button class="u-video-poster"></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="u-container-style u-tab-pane" id="link-tab-6219" role="tabpanel" aria-labelledby="tab-6219">
+                    <div class="u-container-layout u-container-layout-2">
+                        {% autoescape false %}
+                        <p class="u-text u-text-1">{{text}}</p>{% endautoescape %}
+                    </div>
+                </div>
+                <div class="u-container-style u-tab-pane" id="tab-0805" role="tabpanel" aria-labelledby="link-tab-0805">
+                    <div class="u-container-layout u-valign-middle-xs u-container-layout-3">
+                        <ul class="u-custom-list u-file-icon u-spacing-90 u-text u-text-default u-text-2">
+                            {% autoescape false %}
+                            {{bonus}}
+
+                            {% endautoescape %}
+                        </ul>
+                    </div>
+                </div>
+                <div class="u-container-style u-tab-pane" id="tab-0806" role="tabpanel" aria-labelledby="link-tab-0805">
+                    <div class="u-container-layout u-valign-middle-xs u-container-layout-3">
+                        <ul class="u-custom-list u-file-icon u-spacing-90 u-text u-text-default u-text-2">
+                            <section class="u-clearfix u-section-2" id="sec-94bb">
+                                <div class="u-clearfix u-sheet u-sheet-1">
+                                    <a href="/test/{{num}}"
+                                       class="u-active-black u-btn u-btn-round u-button-style u-hover-black u-palette-3-base u-radius-7 u-text-active-white u-text-body-alt-color u-text-hover-white u-btn-1"
+                                       data-animation-name="" data-animation-duration="0" data-animation-delay="0"
+                                       data-animation-direction="">пройти
+                                        тестирование по блоку</a>
+                                </div>
+                            </section>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+</body>
+</html>
