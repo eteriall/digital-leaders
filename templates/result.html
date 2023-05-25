@@ -1,0 +1,58 @@
+{% extends "base.html" %}
+
+{% block title %}Политика{% endblock %}
+
+{% block content %}
+<section class="u-clearfix u-section-1" id="sec-001a">
+    <div class="u-clearfix u-sheet u-sheet-1">
+        <h3 class="u-text u-text-custom-color-1 u-text-default u-text-1"
+            style="font-size: 48px; text-align: center; width: 70%">{{text}}</h3>
+
+
+        <p class="u-text u-text-default u-text-2">
+            Вы набрали {{proc}}%
+        </p>
+
+        <p class="u-text u-text-default u-text-2">
+
+            {% if proc >= 80 %}
+                {% if lesson != 4 %}
+                    Поздравляем! Тест пройден. Вы можете переходить к следующему уроку.
+                {% else %}
+                    Поздравляем! Вы прошли курс целиком!
+                {% endif %}
+            {% else %}
+                 К сожалению, вы не прошли тест.
+            {% endif %}
+        </p>
+
+
+
+            {% if proc >= 80 %}
+                {% if lesson != 4 %}
+                    <a href="/lesson/{{lesson + 1}}"
+                       class="u-active-black u-btn u-btn-round u-button-style u-hover-black u-palette-3-base u-radius-50 u-btn-1"
+                       data-animation-name="" data-animation-duration="0" data-animation-delay="0" data-animation-direction=""
+                       style="color: white !important; margin-bottom: 20px;">К следующему уроку</a>
+                {% else %}
+                    <a href="/download-cert"
+                       class="u-active-black u-btn u-btn-round u-button-style u-hover-black u-palette-3-base u-radius-50 u-btn-1"
+                       data-animation-name="" data-animation-duration="0" data-animation-delay="0" data-animation-direction=""
+                       style="color: white !important;  margin-bottom: 20px;">Скачать диплом</a>
+                {% endif %}
+            {% else %}
+                <a href="/test/{{lesson}}"
+                   class="u-active-black u-btn u-btn-round u-button-style u-hover-black u-palette-3-base u-radius-50 u-btn-1"
+                   data-animation-name="" data-animation-duration="0" data-animation-delay="0" data-animation-direction=""
+                   style="color: white !important;  margin-bottom: 20px;">Попробовать ещё раз</a>
+            {% endif %}
+        <a href="/main"
+           class="u-active-black u-btn u-btn-round u-button-style u-hover-black u-palette-3-base u-radius-50 u-btn-1"
+           data-animation-name="" data-animation-duration="0" data-animation-delay="0" data-animation-direction=""
+           style="color: white !important;  margin-top: 0px;">Вернуться
+            в меню</a>
+
+
+    </div>
+</section>
+{% endblock %}

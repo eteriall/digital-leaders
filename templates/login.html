@@ -1,0 +1,55 @@
+{% extends "base.html" %}
+
+{% block title %}
+Вход
+{% endblock %}
+
+{% block content %}
+<section class="u-clearfix u-image u-section-1" id="carousel_40f9" data-image-width="1280" data-image-height="854">
+    <div class="u-clearfix u-sheet u-valign-middle u-sheet-1">
+        <div class="u-clearfix u-gutter-0 u-layout-wrap u-layout-wrap-1">
+            <div class="u-layout">
+                <div class="u-layout-row">
+                    <div class="u-align-center u-container-style u-grey-5 u-layout-cell u-size-60 u-layout-cell-1"
+                         data-animation-name="" data-animation-duration="0" data-animation-delay="0"
+                         data-animation-direction="">
+                        <div class="u-container-layout u-valign-middle-xl u-container-layout-1">
+                            <div class="u-align-left u-form u-form-1">
+                                <form class="u-clearfix u-form-spacing-28 u-form-vertical u-inner-form"
+                                      style="padding: 0px;" name="form" action="login" method="POST">
+                                    <div class="u-form-group u-form-name u-form-partition-factor-2 u-form-group-1">
+                                        <label for="name-5a14" class="u-label" wfd-invisible="true">Почта</label>
+                                        <input type="email" placeholder="Введите вашу почту" id="name-5a14" name="log"
+                                               class="u-border-none u-input u-input-rectangle" required="">
+                                    </div>
+                                    <div class="u-form-group u-form-name u-form-group-2">
+                                        <label for="name-4a80" class="u-label">Пароль</label>
+                                        <input type="password" placeholder="Введите ваш пароль" id="name-4a80"
+                                               name="pass" class="u-border-none u-input u-input-rectangle" required="">
+                                    </div>
+
+                                    {% if error %}
+                                    <div class="u-form-group u-form-name u-form-group-2">
+                                        <b style="color: red;">{{error}}</b>
+                                    </div>
+                                    {% endif %}
+
+                                    <div class="u-align-left u-form-group u-form-submit u-form-group-4">
+                                        <input type="submit" value="Войти"
+                                               class="u-active-black u-border-none u-btn u-btn-round u-btn-submit u-button-style u-hover-black u-palette-3-base u-radius-50 u-btn-2">
+                                    </div>
+
+                                    <div class="u-form-group u-form-name u-form-group-2" style="text-align: center;">
+                                        <a href="/registration">Ещё не зарегистрированы?</a>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock %}

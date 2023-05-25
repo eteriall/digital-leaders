@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html style="font-size: 16px;" lang="ru">
+<head>
+    <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <title>{% block title %} {% endblock %}</title>
+    <link rel="stylesheet" href="static/nicepage.css" media="screen">
+    <link rel="stylesheet" href="static/Reg.css" media="screen">
+    <script class="u-script" type="text/javascript" src="jquery.js" defer=""></script>
+    <script class="u-script" type="text/javascript" src="nicepage.js" defer=""></script>
+    <meta name="theme-color" content="#B0C263">
+    <meta property="og:title" content="Вход">
+    <meta property="og:type" content="website">
+    <meta data-intl-tel-input-cdn-path="intlTelInput/">
+</head>
+<body class="u-body u-xl-mode" data-lang="ru">
+<header class="u-clearfix u-container-align-center u-header u-header" id="sec-191b">
+    <div class="u-clearfix u-sheet u-valign-middle u-sheet-1">
+        <a href="/main"><img class="u-image u-image-default u-image-1" src="/static/logo.png" alt=""
+                             data-image-width="4096" data-image-height="2647"></a></div>
+</header>
+{% block content %}
+
+{% endblock %}
+</body>
+</html>

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- icon -->
+    <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- Popper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Академия лидерства</title>
+    <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <title>{% block title %} {% endblock %}</title>
+    <link rel="stylesheet" href="/static/nicepage.css" media="screen">
+    <link rel="stylesheet" href="/static/Reg.css" media="screen">
+    <script class="u-script" type="text/javascript" src="jquery.js" defer=""></script>
+    <script class="u-script" type="text/javascript" src="nicepage.js" defer=""></script>
+    <meta name="theme-color" content="#B0C263">
+    <meta property="og:title" content="Вход">
+    <meta property="og:type" content="website">
+    <meta data-intl-tel-input-cdn-path="intlTelInput/">
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- Popper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <!-- google Material icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+
+    <script src="{{url_for('static', filename='chatroom_checkpoint.js')}}"></script>
+</head>
+<body class="u-body u-xl-mode" data-lang="ru">
+
+<header class="u-clearfix u-container-align-center u-header u-header" id="sec-191b">
+    <div class="u-clearfix u-sheet u-valign-middle u-sheet-1">
+        <a href="/main"><img class="u-image u-image-default u-image-1" src="/static/logo.png" alt=""
+                             data-image-width="4096" data-image-height="2647"></a></div>
+</header>
+
+
+<section class="u-clearfix u-image u-section-1" id="carousel_40f9" data-image-width="1280" data-image-height="854">
+    <div class="u-clearfix u-sheet u-valign-middle u-sheet-1">
+        <div class="u-clearfix u-gutter-0 u-layout-wrap u-layout-wrap-1">
+            <div class="row">
+                <div class="heading mb-4">
+                    <h4>Трансляция "{{room_id}}"</h4>
+                    <p>
+                        Нажмите <b>"Присоединиться"</b>, чтобы зайти на трансляцию
+                    </p>
+
+                    <div id="permission_alert" class="alert alert-danger" role="alert"
+                         style="display: none; background-color: rgb(255, 130, 130); color: rgb(153, 32, 32);">
+                        <strong>Пожалуйста, разрешите доступ к камере и микрофону.</strong>
+                    </div>
+                    <div class="shadow p-0">
+                        <div class="vid-wrapper" style="width: 100%; background-color: rgb(20,20,20);">
+                            <video id="local_vid" autoplay muted style="max-height: 400px; max-width: 100%;"></video>
+                        </div>
+                        <div class="p-3 w-100 bg-light">
+                            <button id="bttn_mute" class="btn btn-lg btn-outline-secondary rounded-circle mx-3">
+                            <span id="mute_icon" class="material-icons pt-2">
+                                mic
+                            </span>
+                            </button>
+                            <button id="bttn_vid_mute" class="btn btn-lg btn-outline-secondary rounded-circle mx-3">
+                            <span id="vid_mute_icon" class="material-icons pt-2">
+                                videocam
+                            </span>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="col-sm-12 col-md-12 col-lg-6 mb-5"style="width: 100%; max-width: 100% !important; text-align: center;">
+                        <div class="u-align-left u-form-group u-form-submit u-form-group-4" style="width: 100%; max-width: 100% !important; text-align: center;">
+                            <form method="POST" onsubmit="return validate()" class="form"
+                                   style="width: 100%; max-width: 100% !important; text-align: center;">
+                                <input type="submit" value="Присоединиться"
+                                       class="u-active-black u-border-none u-btn u-btn-round u-btn-submit u-button-style u-hover-black u-palette-3-base u-radius-50 u-btn-2"
+                                       style="color: white !important;">
+                                <input type="hidden" value="0" name="mute_audio" id="mute_audio_inp">
+                                <input type="hidden" value="0" name="mute_video" id="mute_video_inp">
+
+                            </form>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+</body>
+
+
+</html>
