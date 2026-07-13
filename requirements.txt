@@ -1,7 +1,7 @@
 python-docx
 opencv-python
 Flask-SocketIO==4.3.1
-python-engineio==3.13.2
+python-engineio==4.13.2
 python-socketio==5.16.2
 Flask==2.2.5
 Werkzeug==3.1.6
